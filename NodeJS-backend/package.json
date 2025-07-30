@@ -1,0 +1,25 @@
+{
+  "name": "nodejs-backend",
+  "version": "1.0.0",
+  "description": "Backend for Geo App in NodeJS Express",
+  "license": "ISC",
+  "author": "Patricia P. Togonon",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch index.js"
+  },
+  "devDependencies": {
+    "cookie-parser": "^1.4.7",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb-memory-server": "^10.1.4",
+    "mongoose": "^8.16.5",
+    "zod": "^4.0.13"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.1"
+  }
+}
