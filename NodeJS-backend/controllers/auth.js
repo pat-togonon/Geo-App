@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 
 const createAccount =  async (request, response) => {
-
+  
   const username = request.body.username?.trim().toLowerCase()
   const password = request.body.password?.trim()
 
@@ -36,6 +36,8 @@ const createAccount =  async (request, response) => {
 }
 
 const login = async (request, response) => {
+
+  console.log(request.body)
   
   const username = request.body.username?.trim().toLowerCase()
   const password = request.body.password?.trim()
@@ -73,7 +75,7 @@ const login = async (request, response) => {
   response.cookie('jwt', refreshToken, {
     httpOnly: true,
     sameSite: 'Lax',
-    secure: 'false',
+    secure: false,
     maxAge: 30 * 24 * 60 * 60 * 1000
   })
 

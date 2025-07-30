@@ -5,6 +5,7 @@ const middleware = require('./utils/middleware')
 const cookieParser = require('cookie-parser')
 const authRouter = require('./routes/auth')
 const User = require('./models/User')
+const cors = require('cors')
 
 
 mongoose.set('strictQuery', false)
@@ -19,6 +20,13 @@ mongoose.connect(process.env.MONGODB_URI)
   })
 
 const app = express()
+
+const corsOption = {
+  origin: true,
+  credentials: true
+}
+
+app.use(cors(corsOption))
 
 app.use(express.json())
 
