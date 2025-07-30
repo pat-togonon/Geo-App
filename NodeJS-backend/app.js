@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser')
 const authRouter = require('./routes/auth')
 const User = require('./models/User')
 const cors = require('cors')
+const ipRouter = require('./controllers/ip')
 
 
 mongoose.set('strictQuery', false)
@@ -30,12 +31,8 @@ app.use(cors(corsOption))
 
 app.use(express.json())
 
-// to delete 
-app.get('/', (request, response) => {
-  response.send(`<div>Hello Pat!</div>`)
-})
-
 app.use('/api/auth', authRouter)
+app.use('/api', ipRouter)
 
 app.use(middleware.errorHandler)
 app.use(middleware.unknownEndpoint)

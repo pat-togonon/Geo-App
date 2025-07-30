@@ -1,6 +1,9 @@
 
-const IpDetails = ({ ip }) => {
+const IpDetails = ({ ip, error }) => {
 
+  if (!ip.city || error) {
+    return null
+  }
   
   return (
     <>
