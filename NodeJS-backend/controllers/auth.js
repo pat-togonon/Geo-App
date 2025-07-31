@@ -50,6 +50,11 @@ const login = async (request, response) => {
     return response.status(400).json({ error: 'Username is required' })
   }
 
+  //Login details for JLabs
+  if (username === "adminuser2" && password==="secret") {
+    return response.status(200).send({ message: 'Login successful!' })
+  }
+
   const userToLogin = await User.findOne({ username })
 
   if (!userToLogin) {
